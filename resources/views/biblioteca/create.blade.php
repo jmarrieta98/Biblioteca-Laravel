@@ -4,6 +4,9 @@
 
 @section('contenido')
     <main>
+        <div class="py-12">
+            <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+                <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
         <h1>Crear biblioteca</h1>
         <form action="{{route('bibliotecas.store')}}" method="post">
 
@@ -19,7 +22,7 @@
             <br>
             <label for="direccion">Direccion:</label><br>
             <input name="direccion" type="text" id="direccion" value="{{old('direccion')}}">
-            @error('biblioteca')
+            @error('direccion')
             <br>
             <small>*{{$message}}</small>
             <br>
@@ -42,7 +45,7 @@
             @enderror
             <br>
             <label for="telefono">Telefono: </label><br>
-            <input name="telefono" type="telefono" id="telefono" value="{{old('telefono')}}">
+            <input name="telefono" type="tel" id="telefono" value="{{old('telefono')}}">
             @error('telefono')
             <br>
             <small>*{{$message}}</small>
@@ -61,5 +64,8 @@
 
             <button type="submit">Crear</button>
         </form>
+                </div>
+            </div>
+        </div>
     </main>
 @endsection
