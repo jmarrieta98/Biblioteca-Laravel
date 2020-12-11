@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\BibliotecaController;
+use App\Http\Controllers\LibroController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,3 +22,7 @@ Route::get('/', function () {
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
+
+Route::middleware(['auth:sanctum', 'verified'])->resource('bibliotecas',BibliotecaController::class)->parameters(['bibliotecas' => 'biblioteca']);
+
+Route::middleware(['auth:sanctum','verified'])->resource('libros',LibroController::class)->parameters(['libros' => 'libro']);
